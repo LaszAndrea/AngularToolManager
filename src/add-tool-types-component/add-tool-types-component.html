@@ -1,0 +1,40 @@
+<div class="form-wrapper">
+  <div class="form-header">
+    <button class="back-button" routerLink="/home">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      Vissza
+    </button>
+    <h2>ToolType felvitele</h2>
+  </div>
+
+  <div class="form-container">
+    <form (ngSubmit)="onSubmit()" #toolForm="ngForm" novalidate>
+      <div class="form-group">
+        <label for="image">Kép URL</label>
+        <input type="url" id="image" name="image" [(ngModel)]="tool.imageUrl" required />
+      </div>
+
+      <div class="form-group">
+        <label for="name">Név</label>
+        <input type="text" id="name" name="name" [(ngModel)]="tool.name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="model">Modell</label>
+        <input type="text" id="model" name="model" [(ngModel)]="tool.model" required />
+      </div>
+
+      <div class="form-group">
+        <label for="type">Típus</label>
+        <select id="type" name="type" [(ngModel)]="tool.type" required>
+          <option value="" disabled selected>Válassz típust</option>
+          <option *ngFor="let t of types" [value]="t">{{ t }}</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-button" [disabled]="toolForm.invalid">Küldés</button>
+    </form>
+  </div>
+</div>

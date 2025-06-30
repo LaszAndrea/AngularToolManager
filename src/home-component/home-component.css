@@ -1,0 +1,220 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  thead {
+    background-color: #4A90E2;
+    color: white;
+  }
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  tbody tr:hover {
+    background-color: #f1f7ff;
+  }
+  img {
+    max-width: 60px;
+    border-radius: 4px;
+  }
+  button {
+    background-color: #4A90E2;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    margin-right: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #357ABD;
+  }
+  .plus-btn {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 14px;
+    line-height: 1;
+  }
+  .actions-cell {
+    white-space: nowrap;
+    width: 100px;
+    text-align: center;
+  }
+  .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    vertical-align: middle;
+    color: #4A90E2;
+    transition: color 0.3s ease;
+  }
+  .icon-btn:hover {
+    color: #357ABD;
+  }
+  .icon-btn svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+  }
+
+  .welcome-text {
+    margin-left: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #4A90E2;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .search-bar {
+    flex-grow: 1;
+    max-width: 400px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .welcome-logout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .logout-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  .logout-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+  
+  .fab-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+  }
+
+  .fab-button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    font-size: 32px;
+    line-height: 0;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+
+  .fab-button:hover {
+    background-color: #357ABD;
+  }
+
+  .fab-menu-container {
+    position: absolute;
+    bottom: 70px; /* kicsit fentebb a gombtól */
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    overflow: hidden;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .fab-menu-container.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .fab-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fab-menu button {
+    padding: 12px 16px;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    transition: background-color 0.2s ease;
+  }
+
+  .fab-menu button:last-child {
+    border-bottom: none;
+  }
+
+  .fab-menu button:hover {
+    background-color: #f0f0f0;
+  }
+
+.plus-btn {
+  background: #357ABD;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.sub-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.sub-table td, .sub-table th {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+

@@ -1,0 +1,52 @@
+<div class="register-container">
+  <h2>Regisztráció</h2>
+
+  <form #registerForm="ngForm" (ngSubmit)="onRegister()" class="register-form" novalidate>
+    <!-- Név -->
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="name"
+      placeholder="Teljes név"
+      required
+      #nameField="ngModel"
+    />
+    <div *ngIf="nameField.invalid && nameField.touched" class="error">
+      A név megadása kötelező.
+    </div>
+
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="email"
+      placeholder="Email cím"
+      required
+      email
+      #emailField="ngModel"
+    />
+    <div *ngIf="emailField.invalid && emailField.touched" class="error">
+      Érvényes email címet adj meg.
+    </div>
+
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+      placeholder="Jelszó"
+      required
+      minlength="6"
+      #passwordField="ngModel"
+    />
+    <div *ngIf="passwordField.invalid && passwordField.touched" class="error">
+      A jelszónak legalább 6 karakter hosszúnak kell lennie.
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Regisztráció</button>
+  </form>
+
+  <p class="login-link">
+  Már van fiókod?
+  <a routerLink="/login">Jelentkezz be itt</a>.
+  </p>
+
+</div>

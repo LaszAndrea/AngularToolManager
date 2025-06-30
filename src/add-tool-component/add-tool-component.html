@@ -1,0 +1,58 @@
+<div class="form-wrapper">
+  <div class="form-header">
+    <button class="back-button" routerLink="/home">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      Vissza
+    </button>
+    <h2>Tool felvitele</h2>
+  </div>
+
+  <div class="form-container">
+    <form (ngSubmit)="onSubmit()" #toolForm="ngForm" novalidate>
+      <div class="form-group">
+        <label for="serialNumber">Sorozatszám</label>
+        <input
+          type="text"
+          id="serialNumber"
+          name="serialNumber"
+          [(ngModel)]="tool.serialNumber"
+          required
+          #serialNumberField="ngModel"
+        />
+        <div *ngIf="serialNumberField.invalid && serialNumberField.touched" class="error">
+          A sorozatszám megadása kötelező.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Állapot</label>
+        <select
+          id="status"
+          name="status"
+          [(ngModel)]="tool.status"
+          required
+        >
+          <option value="" disabled selected>Válassz állapotot</option>
+          <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Modell típus</label>
+        <select
+          id="model"
+          name="model"
+          [(ngModel)]="tool.model"
+          required
+        >
+          <option value="" disabled selected>Válassz modellt</option>
+          <option *ngFor="let model of models" [value]="model">{{ model }}</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-button" [disabled]="toolForm.invalid">Küldés</button>
+    </form>
+  </div>
+</div>
